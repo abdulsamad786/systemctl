@@ -7,6 +7,8 @@ IOSTATS
 
 """
 import os
+import re 
+
 
 def collect_IOStats():
     myList=[]    
@@ -32,14 +34,16 @@ def collect_IOStats():
     #print myList	   
     #print ""
 
-    print "system.io.",myList[0][2],".ReadIOPS ",myList[0][3]
-    print "system.io.",myList[1][2],".WriteIOPS",myList[1][7]
-    print "system.io.",myList[2][2],".ReadIOPS ",myList[2][5]
-    print "system.io.",myList[3][2],".ReadIOPS ",myList[3][9]
-    print "system.io.",myList[4][2],".ReadIOPS ",myList[4][6]
-    print "system.io.",myList[5][2],".ReadIOPS ",myList[5][10]
-    print "system.io.",myList[6][2],".ReadIOPS ",myList[6][13]
-    print "system.io.",myList[7][2],".ReadIOPS ",myList[7][12]
+    for m in range(0, len(myList)):
+	if re.search(r"^(ram|sda|loop)" , myList[m][2]):    
+    	    print "system.io.",myList[m][2],".ReadIOPS ",myList[m][3]
+    	    print "system.io.",myList[m][2],".WriteIOPS",myList[m][7]
+            print "system.io.",myList[m][2],".ReadSectors ",myList[m][5]
+            print "system.io.",myList[m][2],".WriteSectors ",myList[m][9]
+            print "system.io.",myList[m][2],".ReadTime ",myList[m][6]
+            print "system.io.",myList[m][2],".WriteTime ",myList[m][10]
+            print "system.io.",myList[m][2],".QueueSize ",myList[m][13]
+            print "system.io.",myList[m][2],".Utilization ",myList[m][12]
    
     
 
@@ -53,13 +57,19 @@ if __name__ == "__main__":
 """
 $ ./Collect_IOStats.py
 system.io. ram0 .ReadIOPS  0
+system.io. ram0 .WriteIOPS 0
+system.io. ram0 .ReadSectors  0
+system.io. ram0 .WriteSectors  0
+system.io. ram0 .ReadTime  0
+system.io. ram0 .WriteTime  0
+system.io. ram0 .QueueSize  0
+system.io. ram0 .Utilization  0
+system.io. ram1 .ReadIOPS  0
 system.io. ram1 .WriteIOPS 0
-system.io. ram2 .ReadIOPS  0
-system.io. ram3 .ReadIOPS  0
-system.io. ram4 .ReadIOPS  0
-system.io. ram5 .ReadIOPS  0
-system.io. ram6 .ReadIOPS  0
-system.io. ram7 .ReadIOPS  0              
-
+system.io. ram1 .ReadSectors  0 
+.
+.
+.
+.
 """
 
