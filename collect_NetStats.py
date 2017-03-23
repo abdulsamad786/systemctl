@@ -5,6 +5,7 @@
 
 """
 import os
+import re
 
 def collect_NetStats():
     myList=[]    
@@ -32,11 +33,13 @@ def collect_NetStats():
     #print myList	    
     #[['Inter-|', 'Receive', '|', 'Transmit'], ['face', '|bytes', 'packets', 'errs', 'drop', 'fifo', 'frame', 'compressed', 'multicast|bytes', 'packets', 'errs', 'drop', 'fifo', 'colls', 'carrier', 'compressed'], ['eth0', '6618241', '47334', '0', '0', '0', '0', '0', '0', '8618887', '32928', '0', '0', '0', '0', '0', '0'], ['eth1', '271777', '2056', '0', '0', '0', '0', '0', '0', '1526', '17', '0', '0', '0', '0', '0', '0'], ['lo', '3631621', '17966', '0', '0', '0', '0', '0', '0', '3631621', '17966', '0', '0', '0', '0', '0', '0']] 
 
-    print "system.interface.",myList[2][0],".rxbytes ",myList[2][1]
-    print "system.interface.",myList[2][0],".rxpackets ",myList[2][2]
-    print "system.interface.",myList[2][0],".txbytes ",myList[2][9]
-    print "system.interface.",myList[2][0],".rxpackets ",myList[2][10]
-    
+    for m in range(0, len(myList)):
+	if re.search(r"^(eth|l)" , myList[m][0]):
+	    print "system.interface.",myList[m][0],".rxbytes ",myList[m][1]
+	    print "system.interface.",myList[m][0],".rxpackets ",myList[m][2]
+	    print "system.interface.",myList[m][0],".txbytes ",myList[m][9]
+	    print "system.interface.",myList[m][0],".rxpackets ",myList[m][10]
+    #regex to search for the interface card starting from 'eth' or 'l'     
 
 def main():
     v = collect_NetStats()
@@ -48,11 +51,19 @@ if __name__ == "__main__":
     main()
 
 """
-$ ./netstat.py
-system.interface. eth0 .rxbytes  6700845
-system.interface. eth0 .rxpackets  48346
-system.interface. eth0 .txbytes  8710521
-system.interface. eth0 .rxpackets  33479  
+$ ./collect_NetStats.py
+system.interface. eth0 .rxbytes  23366088
+system.interface. eth0 .rxpackets  106380
+system.interface. eth0 .txbytes  15206596
+system.interface. eth0 .rxpackets  70560
+system.interface. eth1 .rxbytes  2887061
+system.interface. eth1 .rxpackets  20821
+system.interface. eth1 .txbytes  1526
+system.interface. eth1 .rxpackets  17
+system.interface. lo .rxbytes  42528277
+system.interface. lo .rxpackets  207571
+system.interface. lo .txbytes  42528277
+system.interface. lo .rxpackets  207571
 
 """
 
