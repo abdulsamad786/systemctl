@@ -9,7 +9,7 @@ import sys
 import itertools
 from tms import *
 
-def vmstat():
+def Collect_VMStat():
     myList=[]    
     newList=[]
     saveDataList=[]
@@ -60,32 +60,23 @@ def vmstat():
     print 'system.mem.free_unused ' ,newList[0][1], ' ',memTotal,tms()   
     print 'system.mem.used  ', used, ' ' ,memTotal,tms()   
 
-"""
-$ ./vmstat.py
-system.mem.free_cached    62756208932   1017564
-system.mem.free_unused  1017564   1017564
-system.mem.used   -125511400300   1017564 
-
-"""
 
 def main():
-    v = vmstat()
+    v = Collect_VMStat()
     #Number_of_lines = myList[2]
     #v = vmstat(path_of_file,Number_of_lines)
 
 
 if __name__ == "__main__":
     main()
-
-
 """
-$ ./vmstat.py '/proc/meminfo' 
-MemTotal:        1024412 kB
 
-MemFree:           82524 kB
+$ ./Collect_VMStat.py
+system.mem.free_cached    71020122112   1017564 1490313102732
+None
+system.mem.free_unused  1017564   1017564 1490313102732
+None
+system.mem.used   -142039226660   1017564 1490313102732
 
-MemAvailable:     366380 kB
-
-Buffers:           69532 kB
 
 """
