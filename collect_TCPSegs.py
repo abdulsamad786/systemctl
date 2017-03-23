@@ -9,6 +9,7 @@ This function collects:
 
 """
 import os
+from tms import *
 
 def collect_TCPSegs():
     myList=[]    
@@ -33,13 +34,13 @@ def collect_TCPSegs():
 	
     #print myList	    
 
-    print "system.tcp.ActiveOpens ",myList[7][5]
-    print "system.tcp.PassiveOpens",myList[7][6]
-    print "system.tcp.EstabRsts",myList[7][8]
-    print "system.tcp.InSegs",myList[7][10]
-    print "system.tcp.OutSegs",myList[7][11]
-    print "system.tcp.ReTransSegs",myList[7][12]
-    print "system.tcp.OutRst", myList[7][14]
+    print "system.tcp.ActiveOpens ",myList[7][5],tms()
+    print "system.tcp.PassiveOpens",myList[7][6],tms()
+    print "system.tcp.EstabRsts",myList[7][8],tms()
+    print "system.tcp.InSegs",myList[7][10],tms()
+    print "system.tcp.OutSegs",myList[7][11],tms()
+    print "system.tcp.ReTransSegs",myList[7][12],tms()
+    print "system.tcp.OutRst", myList[7][14],tms()
 
     
 

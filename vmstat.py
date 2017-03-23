@@ -7,6 +7,7 @@
 import os
 import sys
 import itertools
+from tms import *
 
 def vmstat():
     myList=[]    
@@ -55,9 +56,9 @@ def vmstat():
     #for data_stored in range(0, len(saveDataList)-1):
     #    print saveDataList[data_stored]
 
-    print 'system.mem.free_cached ',' ', free_cached , ' ',memTotal
-    print 'system.mem.free_unused ' ,newList[0][1], ' ',memTotal
-    print 'system.mem.used  ', used, ' ' ,memTotal
+    print 'system.mem.free_cached ',' ', free_cached , ' ',memTotal,tms()
+    print 'system.mem.free_unused ' ,newList[0][1], ' ',memTotal,tms()   
+    print 'system.mem.used  ', used, ' ' ,memTotal,tms()   
 
 """
 $ ./vmstat.py

@@ -5,6 +5,7 @@
 
 """
 import os
+from tms import *
 
 def collect_TCPRetrans():
     myList=[]    
@@ -31,11 +32,11 @@ def collect_TCPRetrans():
     #print myList	    
 
 
-    print "system.tcp.ListenDrops ",myList[1][21]
-    print "system.tcp.TCPFastRetrans",myList[1][45]
-    print "system.tcp.TCPSlowStartRetrans",myList[1][47]
-    print "system.tcp.TCPTimeOuts",myList[1][48]
-    print "system.tcp.TCPBacklogDrop", myList[1][75]
+    print "system.tcp.ListenDrops ",myList[1][21],tms()
+    print "system.tcp.TCPFastRetrans",myList[1][45],tms() 
+    print "system.tcp.TCPSlowStartRetrans",myList[1][47],tms() 
+    print "system.tcp.TCPTimeOuts",myList[1][48],tms() 
+    print "system.tcp.TCPBacklogDrop", myList[1][75],tms() 
 
     #print "system.interface.",myList[2][0],".rxpackets ",myList[2][2]
     #print "system.interface.",myList[2][0],".txbytes ",myList[2][9]

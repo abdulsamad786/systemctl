@@ -8,6 +8,7 @@ CPUSTATS
 """
 import os
 import re
+from tms import *
 
 def collect_CPUStats():
     myList=[]    
@@ -36,11 +37,11 @@ def collect_CPUStats():
    
     for m in range(0,len(myList)-1):
 	if re.match('cpu',myList[m][0]):
-            print "system.",myList[m][0],".user.",myList[m][1]
-            print "system.",myList[m][0],".sys.",myList[m][2]
-    	    print "system.",myList[m][0],".idle.",(myList[m][3] + myList[m][4])
-	    print "system.",myList[m][0],".intr.",myList[m][5]
-	    print "system.",myList[m][0],".softirq.",myList[m][6]
+            print "system.",myList[m][0],".user.",myList[m][1],tms()
+            print "system.",myList[m][0],".sys.",myList[m][2],tms()
+    	    print "system.",myList[m][0],".idle.",(myList[m][3] + myList[m][4]),tms()
+	    print "system.",myList[m][0],".intr.",myList[m][5],tms()
+	    print "system.",myList[m][0],".softirq.",myList[m][6],tms()
 	
 
 """

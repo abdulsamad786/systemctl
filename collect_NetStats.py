@@ -6,6 +6,7 @@
 """
 import os
 import re
+from tms import *
 
 def collect_NetStats():
     myList=[]    
@@ -35,10 +36,10 @@ def collect_NetStats():
 
     for m in range(0, len(myList)):
 	if re.search(r"^(eth|l)" , myList[m][0]):
-	    print "system.interface.",myList[m][0],".rxbytes ",myList[m][1]
-	    print "system.interface.",myList[m][0],".rxpackets ",myList[m][2]
-	    print "system.interface.",myList[m][0],".txbytes ",myList[m][9]
-	    print "system.interface.",myList[m][0],".rxpackets ",myList[m][10]
+	    print "system.interface.",myList[m][0],".rxbytes ",myList[m][1],tms()
+	    print "system.interface.",myList[m][0],".rxpackets ",myList[m][2],tms()
+	    print "system.interface.",myList[m][0],".txbytes ",myList[m][9],tms()
+	    print "system.interface.",myList[m][0],".rxpackets ",myList[m][10],tms()
     #regex to search for the interface card starting from 'eth' or 'l'     
 
 def main():
