@@ -57,15 +57,17 @@ def collect_VMStat():
     
     #for k in saveDataList:
     #    print k
-    print 'system.mem.free_cached ',' ', free_cached , ' ',memTotal,tms()
+    print 'system.mem.free_cached ', free_cached,memTotal,tms()
     print ""
-    print 'system.mem.free_unused ' ,newList[0][1], ' ',memTotal,tms()   
+    print 'system.mem.free_unused ',newList[0][1],memTotal,tms()   
     print""
-    print 'system.mem.used  ', used, ' ' ,memTotal,tms()   
+    print 'system.mem.used  ', used,memTotal,tms()   
+    print""
+
 
 
 def main():
-    v = Collect_VMStat()
+    v = collect_VMStat()
 
 
 if __name__ == "__main__":
