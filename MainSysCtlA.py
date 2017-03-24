@@ -34,30 +34,40 @@ if __name__ == "__main__":
 
 """
 $ ./MainSysCtlA.py
-system. cpu .user. 11060705 1490313204181
-None
-system. cpu .sys. 2028 1490313204181
-None
-system. cpu .idle. 2033333881928990 1490313204181
-None
-system. cpu .intr. 15552 1490313204181
-None
-system. cpu .softirq. 70836 1490313204181
-None
-system. cpu0 .user. 2821592 1490313204181
-None
-system. cpu0 .sys. 214 1490313204181
-None
-system. cpu0 .idle. 518803220311138 1490313204181
-None
-system. cpu0 .intr. 4183 1490313204181
-None
-system. cpu0 .softirq. 20007 1490313204181
-None
-system. cpu1 .user. 2749878 1490313204181
-None
-system. cpu1 .sys. 590 1490313204181
-None 
+system. cpu .user. 11086278 1490392314547
+
+system. cpu .sys. 2642 1490392314547
+
+system. cpu .idle. 20413867113424823 1490392314547
+
+system. cpu .intr. 17737 1490392314547
+
+system. cpu .softirq. 81560 1490392314547
+
+system. cpu0 .user. 2829306 1490392314547
+
+system. cpu0 .sys. 429 1490392314547
+
+system. cpu0 .idle. 521309128179129 1490392314547
+
+system. cpu0 .intr. 4849 1490392314548
+
+system. cpu0 .softirq. 21311 1490392314548
+
+system. cpu1 .user. 2756534 1490392314548
+
+system. cpu1 .sys. 591 1490392314548
+
+system. cpu1 .idle. 509210828370883 1490392314548
+
+system. cpu1 .intr. 4966 1490392314548
+
+system. cpu1 .softirq. 28404 1490392314548
+
+system. cpu2 .user. 2754415 1490392314548
+
+system. cpu2 .sys. 869 1490392314549
+ 
 .
 .
 .
