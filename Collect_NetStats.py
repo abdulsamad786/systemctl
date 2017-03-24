@@ -21,11 +21,11 @@ def collect_NetStats():
     except IOError:
         print "File does not Exist"
 
-    v = [s.replace(':','') for s in fileReader]
-    #print v
+    Removing_chars = [s.replace(':','') for s in fileReader]
+    #print Removing_chars
     #print " "
 
-    k =[ x.strip(' ') for x in v]
+    k =[ x.strip(' ') for x in Removing_chars]
     #print k
   
     for i in k:
@@ -37,34 +37,46 @@ def collect_NetStats():
     for m in range(0, len(myList)):
 	if re.search(r"^(eth|l)" , myList[m][0]):
 	    print "system.interface.",myList[m][0],".rxbytes ",myList[m][1],tms()
+            print " "
 	    print "system.interface.",myList[m][0],".rxpackets ",myList[m][2],tms()
+            print " "
 	    print "system.interface.",myList[m][0],".txbytes ",myList[m][9],tms()
+    	    print " "
 	    print "system.interface.",myList[m][0],".rxpackets ",myList[m][10],tms()
-    #regex to search for the interface card starting from 'eth' or 'l'     
+            print " "
+    ##regex to search for the interface card starting from 'eth' or 'l'  
 
 def main():
     v = collect_NetStats()
-    #Number_of_lines = myList[2]
-    #v = vmstat(path_of_file,Number_of_lines)
 
 
 if __name__ == "__main__":
     main()
 
 """
-$ ./collect_NetStats.py
-system.interface. eth0 .rxbytes  23366088
-system.interface. eth0 .rxpackets  106380
-system.interface. eth0 .txbytes  15206596
-system.interface. eth0 .rxpackets  70560
-system.interface. eth1 .rxbytes  2887061
-system.interface. eth1 .rxpackets  20821
-system.interface. eth1 .txbytes  1526
-system.interface. eth1 .rxpackets  17
-system.interface. lo .rxbytes  42528277
-system.interface. lo .rxpackets  207571
-system.interface. lo .txbytes  42528277
-system.interface. lo .rxpackets  207571
+$ ./Collect_NetStats.py
+system.interface. eth0 .rxbytes  145673281 1490392635191
 
+system.interface. eth0 .rxpackets  2053875 1490392635192
+
+system.interface. eth0 .txbytes  406193562 1490392635192
+
+system.interface. eth0 .rxpackets  2008502 1490392635192
+
+system.interface. eth1 .rxbytes  3844150 1490392635192
+
+system.interface. eth1 .rxpackets  27638 1490392635192
+
+system.interface. eth1 .txbytes  1526 1490392635192
+
+system.interface. eth1 .rxpackets  17 1490392635192
+
+system.interface. lo .rxbytes  56984777 1490392635192
+
+system.interface. lo .rxpackets  278047 1490392635192
+
+system.interface. lo .txbytes  56984777 1490392635192
+
+system.interface. lo .rxpackets  278047 1490392635192
 """
 
