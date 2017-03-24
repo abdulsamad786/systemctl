@@ -85,13 +85,19 @@ if __name__ == "__main__":
     main()
 
 """
-$ ./collect_TCPSegs.py
-system.tcp.ActiveOpens  32
-system.tcp.PassiveOpens 17
-system.tcp.EstabRsts 13
-system.tcp.InSegs 115318
-system.tcp.OutSegs 98301
-system.tcp.ReTransSegs 7
-system.tcp.OutRst 50                 
+$ ./Collect_TCPSegs.py
+system.tcp.AciveOpens 112 1490393063437
+
+system.tcp.PassiveOpens 26 1490393063437
+
+system.tcp.EstabRsts 25 1490393063438
+
+system.tcp.InSegs 2282365 1490393063438
+
+system.tcp.OutSegs 2248560 1490393063438
+
+system.tcp.ReTransSegs 335 1490393063438
+
+system.tcp.OutRst 148 1490393063438                
 """
 
