@@ -16,7 +16,7 @@ def collect_TCPRetrans():
 	#print fileReader
 	#print ""
         fileobj.close()
-        #reading /proc/meminfo file
+        #reading /proc/net/netstat file
     except IOError:
         print "File does not Exist"
 
@@ -51,20 +51,21 @@ def collect_TCPRetrans():
 
 def main():
     v = collect_TCPRetrans()
-    #Number_of_lines = myList[2]
-    #v = vmstat(path_of_file,Number_of_lines)
 
 
 if __name__ == "__main__":
     main()
 
 """
-$ ./collect_TCPRetrans.py
+$ ./Collect_TCPRetrans.py
+system.tcp.ListenDrops  0 1490392903879
 
-system.tcp.ListenDrops  0
-system.tcp.TCPFastRetrans 0
-system.tcp.TCPSlowStartRetrans 0
-system.tcp.TCPTimeOuts 6
-system.tcp.TCPBacklogDrop 0                   
+system.tcp.TCPFastRetrans 0 1490392903879
+
+system.tcp.TCPSlowStartRetrans 50 1490392903879
+
+system.tcp.TCPTimeOuts 248 1490392903879
+
+system.tcp.TCPBacklogDrop 0 1490392903879         
 """
 

@@ -17,7 +17,7 @@ def collect_NetStats():
 	#print fileReader
 	#print ""
         fileobj.close()
-        #reading /proc/meminfo file
+        #reading /proc/net/dev file
     except IOError:
         print "File does not Exist"
 
