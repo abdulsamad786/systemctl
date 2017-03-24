@@ -1,6 +1,7 @@
 # systemctl
-System Stats project with python
-task is to implement all agents listed below in Python. 
+-------------------------System Stats project with python---------------------------------
+
+The task is to implement all agents listed below in Python. 
 Implement them as a separate python program. Once all agents are
  implemented and output meets the requirements, combine them into one python
  program (similar to perl script provided). Implement them as python functions.
