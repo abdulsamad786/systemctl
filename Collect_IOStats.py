@@ -37,13 +37,21 @@ def collect_IOStats():
     for m in range(0, len(myList)):
 	if re.search(r"^(ram|sda|loop)" , myList[m][2]):    
     	    print "system.io.",myList[m][2],".ReadIOPS ",myList[m][3],tms()
+            print ""
     	    print "system.io.",myList[m][2],".WriteIOPS",myList[m][7],tms()
+            print ""
             print "system.io.",myList[m][2],".ReadSectors ",myList[m][5],tms()
+            print ""
             print "system.io.",myList[m][2],".WriteSectors ",myList[m][9],tms()
+            print ""
             print "system.io.",myList[m][2],".ReadTime ",myList[m][6],tms()
+            print ""
             print "system.io.",myList[m][2],".WriteTime ",myList[m][10],tms()
+            print ""
             print "system.io.",myList[m][2],".QueueSize ",myList[m][13],tms()
+            print ""
             print "system.io.",myList[m][2],".Utilization ",myList[m][12],tms()
+            print ""
    
     
 

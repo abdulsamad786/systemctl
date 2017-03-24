@@ -9,11 +9,12 @@ import time
 
 def tms():
     millis = int(round(time.time() * 1000))
-    print millis
+    return millis
 
 
 def main():
     t = tms()
+    print t
 
 
 if __name__ == "__main__":

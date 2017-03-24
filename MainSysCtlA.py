@@ -10,22 +10,24 @@ import time
 
 from Collect_CpuStats import *
 from Collect_IOStats import *
-from collect_NetStats import *
-from collect_TCPRetrans import *
-from collect_TCPSegs import *
+from Collect_NetStats import *
+from Collect_TCPRetrans import *
+from Collect_TCPSegs import *
 from Collect_VMStat import *
 
 def main():
 	while(1):
-	    cpu = collect_CPUStats()
-	    io = collect_IOStats()
-	    net = collect_NetStats
+	    cpu  = collect_CPUStats()
+	    io   = collect_IOStats()
+	    net  = collect_NetStats
 	    tcpR = collect_TCPRetrans()
             tcpS = collect_TCPSegs()
-	    vm = Collect_VMStat()
+	    vm   = collect_VMStat()
 	
 	    time.sleep(5)
+            print ""
 	    print "------------------------------"
+            print ""
 	
 if __name__ == "__main__":
     main()

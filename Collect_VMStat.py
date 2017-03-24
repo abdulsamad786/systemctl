@@ -9,9 +9,9 @@ import sys
 import itertools
 from tms import *
 
-def Collect_VMStat():
-    myList=[]    
-    newList=[]
+def collect_VMStat():
+    myList=[] 	      #list will used to store N lines from a fileReader
+    newList=[]        #newList used to sote the tokens taken from myList
     saveDataList=[]
     
     try:
@@ -23,13 +23,14 @@ def Collect_VMStat():
     except IOError:
         print "File does not Exist"
     
-    #now printing first 4 elements of vmstat
+    #now printing first 4 elements of vmstat using itertools.islice function
+    #It iterated over the the N line of a file, here N = 4
     myNelements = fileReader
     topNlines= itertools.islice(myNelements,4) 
     #print topNlines
     	
     #converting topNlines to a list, since itertools.islice return
-    #an object
+    #an object.
     myList= list(topNlines)
     #print myList
     
@@ -47,36 +48,35 @@ def Collect_VMStat():
     free_unused = int(newList[1][1])
     used = int(newList[0][1]) - free_cached - free_cached
 
+    """
     saveDataList.append(['system.mem.free_cached ',' ', free_cached , ' ',memTotal])
     saveDataList.append(['system.mem.free_unused ' ,newList[0][1], ' ',memTotal ])
     saveDataList.append(['system.mem.used  ', used, ' ' ,memTotal ])
     #print saveDataList
-    #print ""
-
-    #for data_stored in range(0, len(saveDataList)-1):
-    #    print saveDataList[data_stored]
-
+    #print """
+    
+    #for k in saveDataList:
+    #    print k
     print 'system.mem.free_cached ',' ', free_cached , ' ',memTotal,tms()
+    print ""
     print 'system.mem.free_unused ' ,newList[0][1], ' ',memTotal,tms()   
+    print""
     print 'system.mem.used  ', used, ' ' ,memTotal,tms()   
 
 
 def main():
     v = Collect_VMStat()
-    #Number_of_lines = myList[2]
-    #v = vmstat(path_of_file,Number_of_lines)
 
 
 if __name__ == "__main__":
     main()
 """
-
 $ ./Collect_VMStat.py
-system.mem.free_cached    71020122112   1017564 1490313102732
-None
-system.mem.free_unused  1017564   1017564 1490313102732
-None
-system.mem.used   -142039226660   1017564 1490313102732
+system.mem.free_cached    55920196720   1017564 1490372002755
+
+system.mem.free_unused  1017564   1017564 1490372002755
+
+system.mem.used   -111839375876   1017564 1490372002755 
 
 
 """
