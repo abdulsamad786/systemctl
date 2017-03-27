@@ -59,15 +59,14 @@ def collect_TCPSegs():
  
     """ 
     for m in (0,len(myList)):
-        for n in range(m+1, len(myList)):
-		if re.match("Tcp",myList[m][0]):
-    		    print "system.tcp." ,myList[m][5] ,".", myList[n][5],tms()
-    		    print "system.tcp." ,myList[m][6] ,".", myList[n][6],tms()
-    		    print "system.tcp." ,myList[m][8] ,".", myList[n][8],tms()
-    		    print "system.tcp." ,myList[m][10] ,".", myList[n][10],tms()
-    		    print "system.tcp." ,myList[m][11] ,".", myList[n][11],tms()
-    		    print "system.tcp." ,myList[m][12] ,".", myList[n][12],tms()
-    		    print "system.tcp." ,myList[m][14] ,".", myList[n][14],tms()
+        if re.match("Tcp",myList[m][0]):
+    	    print "system.tcp." ,myList[m][5] ,".", myList[n][5],tms()
+    	    print "system.tcp." ,myList[m][6] ,".", myList[n][6],tms()
+    	    print "system.tcp." ,myList[m][8] ,".", myList[n][8],tms()
+    	    print "system.tcp." ,myList[m][10] ,".", myList[n][10],tms()
+    	    print "system.tcp." ,myList[m][11] ,".", myList[n][11],tms()
+    	    print "system.tcp." ,myList[m][12] ,".", myList[n][12],tms()
+    	    print "system.tcp." ,myList[m][14] ,".", myList[n][14],tms()
     #print "system.tcp.PassiveOpens",myList[7][6],tms()
     #print "system.tcp.EstabRsts",myList[7][8],tms()
     #print "system.tcp.InSegs",myList[7][10],tms()
